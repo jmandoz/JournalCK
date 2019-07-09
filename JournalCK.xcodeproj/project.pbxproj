@@ -13,6 +13,9 @@
 		A474676E22D3F54C00118BDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A474676C22D3F54C00118BDA /* LaunchScreen.storyboard */; };
 		A4FB2FED22D3F74B00A21A79 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB2FEC22D3F74B00A21A79 /* Entry.swift */; };
 		A4FB2FF022D400C000A21A79 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB2FEF22D400C000A21A79 /* EntryController.swift */; };
+		A4FB2FF222D40EDA00A21A79 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB2FF122D40EDA00A21A79 /* EntryListTableViewController.swift */; };
+		A4FB2FF422D416C000A21A79 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB2FF322D416C000A21A79 /* EntryDetailViewController.swift */; };
+		A4FB2FF722D4CB8B00A21A79 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FB2FF622D4CB8B00A21A79 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		A4FB2FEC22D3F74B00A21A79 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		A4FB2FEE22D3F78300A21A79 /* JournalCK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JournalCK.entitlements; sourceTree = "<group>"; };
 		A4FB2FEF22D400C000A21A79 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		A4FB2FF122D40EDA00A21A79 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		A4FB2FF322D416C000A21A79 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		A4FB2FF622D4CB8B00A21A79 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FB2FF722D4CB8B00A21A79 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				A474676222D3F54B00118BDA /* JournalCK */,
 				A474676122D3F54B00118BDA /* Products */,
+				A4FB2FF522D4CB8B00A21A79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +113,8 @@
 		A474677922D3F59B00118BDA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A4FB2FF122D40EDA00A21A79 /* EntryListTableViewController.swift */,
+				A4FB2FF322D416C000A21A79 /* EntryDetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -115,6 +125,14 @@
 				A4FB2FEF22D400C000A21A79 /* EntryController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		A4FB2FF522D4CB8B00A21A79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4FB2FF622D4CB8B00A21A79 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +168,9 @@
 					A474675F22D3F54B00118BDA = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -195,6 +216,8 @@
 			files = (
 				A4FB2FF022D400C000A21A79 /* EntryController.swift in Sources */,
 				A474676422D3F54B00118BDA /* AppDelegate.swift in Sources */,
+				A4FB2FF222D40EDA00A21A79 /* EntryListTableViewController.swift in Sources */,
+				A4FB2FF422D416C000A21A79 /* EntryDetailViewController.swift in Sources */,
 				A4FB2FED22D3F74B00A21A79 /* Entry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

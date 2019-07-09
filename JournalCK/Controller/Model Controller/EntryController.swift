@@ -11,8 +11,20 @@ import CloudKit
 
 class EntryController {
     
+    //Create a notification
+    let messagesWereUpdatedNotification = Notification.Name("Messages were updated")
+    
+    //Singleton
+    static let shared = EntryController()
+    
     //Source of Truth
-    var entries: [Entry] = []
+    var entries: [Entry] = []{
+        didSet {
+            //createing a post notification
+            NotificationCenter.default.post(name: messagesWereUpdatedNotification, object: nil)
+        }
+    }
+    
     
     //CRUD
     
@@ -20,7 +32,9 @@ class EntryController {
     
     //save
     //Our function takes in an Entry and completes with true when the Entry is saved
-    func saveEntry(entry: Entry, completion: @escaping (Bool) -> ()) {
+    func saveEntry(title: String, body: String, completion: @escaping (Bool) -> Void) {
+        //create the entry
+        let entry = Entry(title: title, bodyText: body)
         //creating our entry that we're saving into a CKRecord using our convenience initializer from the model
         let entryToSave = CKRecord(entry: entry)
         CKContainer.default().privateCloudDatabase.save(entryToSave) { (record, error) in
@@ -36,10 +50,10 @@ class EntryController {
         }
     }
     //create
-    func addEntryWith(title: String, body: String, completion: @escaping (Bool) -> Void) {
-        let entryToAdd = Entry(title: title, bodyText: body)
-        saveEntry(entry: entryToAdd, completion: completion)
-    }
+//    func addEntryWith(title: String, body: String, completion: @escaping (Bool) -> Void) {
+//        let entryToAdd = Entry(title: title, bodyText: body)
+//        saveEntry(entry: entryToAdd, completion: completion)
+//    }
     
     //Read
     
